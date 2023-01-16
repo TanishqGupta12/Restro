@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>Admin Panel</title>
+
+  <style>
+    td:nth-child(even),
+    th:nth-child(even) {
+      background-color: #D6EEEE;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+  </style>
+
+</head>
+
+<body>
+  <section id="Reservation_info">
+    <h1>Reservation info</h1>
+    <table style="width:100%">
+      <tr>
+        <div>
+          <th>S.N</th>
+          <th>Date</th>
+          <th>Times</th>
+          <th>Person_number</th>
+          <th>Person_name</th>
+          <th>Person_email</th>
+          <th>Phone_numbery</th>
+        </div>
+      </tr>
+      <% if(userData.lenght!=0) { var i=1; userData.forEach(function(data){ %>
+        <tr>
+          <td>
+            <%=i;%>
+          </td>
+          <td>
+            <%=data.Date %>
+          </td>
+          <td>
+            <%=data.Times %>
+          </td>
+          <td>
+            <%=data.Person_number %>
+          </td>
+          <td>
+            <%=data.Person_name %>
+          </td>
+          <td>
+            <%= data.Person_email%>
+          </td>
+          <td>
+            <%= data.Phone_number%>
+          </td>
+        </tr>
+        <% i++ ;})%>
+          <% } else { %>
+            <tr>
+              <td colspan="7"> No Data Found</td>
+            </tr>
+            <%}%>
+
+    </table>
+  </section>
+
+  <section id="contact_info">
+    <h1>contact info</h1>
+    <table style="width:100%">
+      <tr>
+        <div>
+          <th>Name</th>
+          <th>E-mail</th>
+          <th>Message</th>
+        </div>
+
+      </tr>
+      <tr>
+        <td>Alfreds</td>
+        <td>Maria Anders</td>
+        <td>Germany</td>
+      </tr>
+      <tr>
+        <td>Alfreds</td>
+        <td>Maria Anders</td>
+        <td>Germany</td>
+      </tr>
+    </table>
+  </section>
+
+</body>
+
+</html>

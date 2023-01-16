@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: #39EDF4;
+        }
+
+        legend {
+            text-align: center;
+            background-color: rgb(247, 234, 234);
+            color: rgb(13, 12, 12);
+            padding: 10px 15px;
+        }
+    </style>
+    <title>ADMIN PANEL</title>
+    <script type='text/javascript'>
+        function admin() {
+            var admin = document.getElementById('Username').value;
+            var Password = document.getElementById('Password').value;
+            if (admin == 'admin') {
+                if (Password == 'admin123') {
+                    window.location.href("admin_panel.html");
+                    alert("Scuccssful login admin : ");
+                } else {
+                    alert("wrong Password")
+                }
+            } else {
+                alert("wrong Useranme")
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <legend>
+        <h1>ADMIN PANEL</h1>
+        <form action="/admincontrol" method="post">
+            <br>
+            <div>
+                <input type="text" id="Username" placeholder="Username">
+            </div>
+            <br>
+            <div>
+                <input type="text" id="Password" placeholder="Password">
+            </div>
+            <br>
+            <input type="submit" id="b1" value="submit" onclick=admin()>
+            <br>
+        </form>
+    </legend>
+
+
+</body>
+
+</html>
